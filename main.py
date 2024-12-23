@@ -2,11 +2,18 @@ import pandas as pd
 import tkinter as tk
 from tkinter import messagebox
 
-def load_data(symptoms_file, diseases_file):
+def load_data(symptoms_file, diseases_file, history_file):
     """Load datasets from CSV files."""
     symptoms = pd.read_csv(symptoms_file)
     diseases = pd.read_csv(diseases_file)
-    return symptoms, diseases
+    history = pd.read_csv(history_file)
+    return symptoms, diseases, history
+
+def save_history(history_file, new_case):
+    """Save a new case to the history file."""
+    history = pd.read_csv(history_file)
+    history = pd.concat([history, pd.DataFrame([new_case])], ignore_index=True)
+    history.to_csv(history_file, index=False)
 
 def jaccard_3w_similarity(input_symptoms, disease_symptoms, symptoms_weights):
     """Calculate the 3W-Jaccard similarity."""
@@ -39,65 +46,53 @@ def diagnose(symptoms, diseases, input_symptoms):
     return results
 
 def run_diagnosis(selected_symptoms):
-    input_symptoms = [symptom_codes[symptom] for symptom in selected_symptoms]
+    input_symptoms = [symptom_list[i] for i in selected_symptoms]
 
     try:
         results = diagnose(symptoms, diseases, input_symptoms)
         result_text = "\n".join([f"{disease}: {similarity * 100:.2f}% similarity" for disease, similarity in results])
         messagebox.showinfo("Diagnosis Results", result_text)
+
+        # Save the diagnosis to history
+        if results:
+            top_diagnosis = results[0][0]  # Disease with highest similarity
+            new_case = {
+                "Symptoms": ",".join(input_symptoms),
+                "Diagnosis": top_diagnosis
+            }
+            save_history("history.csv", new_case)
     except Exception as e:
         messagebox.showerror("Error", str(e))
 
 def main_gui():
-    global symptoms, diseases, symptom_codes
+    global symptoms, diseases, history, symptom_list
 
+    # Load datasets
     symptoms_file = "symptoms1.csv"
     diseases_file = "diseases1.csv"
-    symptoms, diseases = load_data(symptoms_file, diseases_file)
-    symptom_codes = dict(zip(symptoms['Symptom'], symptoms['Code']))
+    history_file = "history.csv"
+    symptoms, diseases, history = load_data(symptoms_file, diseases_file, history_file)
+    symptom_list = symptoms['Code'].tolist()
 
-    # Create GUI 
+    # Create GUI window
     root = tk.Tk()
     root.title("Eye Disease Diagnosis")
 
     tk.Label(root, text="Select the symptoms you experience:").pack(pady=10)
-    frame = tk.Frame(root)
-    frame.pack(fill=tk.BOTH, expand=True)
 
-    canvas = tk.Canvas(frame)
-    scrollbar = tk.Scrollbar(frame, orient="vertical", command=canvas.yview)
-    scrollable_frame = tk.Frame(canvas)
-
-    scrollable_frame.bind(
-        "<Configure>",
-        lambda e: canvas.configure(scrollregion=canvas.bbox("all"))
-    )
-
-    canvas.create_window((0, 0), window=scrollable_frame, anchor="nw")
-    canvas.configure(yscrollcommand=scrollbar.set)
-
-    symptom_vars = {}
-    
-    # checkboxes
+    symptom_vars = []
     for symptom in symptoms['Symptom']:
         var = tk.BooleanVar()
-        chk = tk.Checkbutton(scrollable_frame, text=symptom, variable=var)
+        chk = tk.Checkbutton(root, text=symptom, variable=var)
         chk.pack(anchor="w")
-        symptom_vars[symptom] = var
+        symptom_vars.append(var)
 
     def collect_selected_symptoms():
-        selected = [symptom for symptom, var in symptom_vars.items() if var.get()]
-        if not selected:
-            messagebox.showwarning("Warning", "Please select at least one symptom.")
-            return
+        selected = [i for i, var in enumerate(symptom_vars) if var.get()]
         run_diagnosis(selected)
 
-    scrollbar.pack(side="right", fill="y")
-    canvas.pack(side="left", fill="both", expand=True)
     tk.Button(root, text="Diagnose", command=collect_selected_symptoms).pack(pady=20)
 
-    root.geometry("400x500")
-    
     root.mainloop()
 
 if __name__ == "__main__":
