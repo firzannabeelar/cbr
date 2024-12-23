@@ -1,21 +1,21 @@
 Code,Symptom,Weight
-G01,Red eye,3
-G02,Dry eyes,3
-G03,Watery eyes,1
-G04,"Blurry, blurry, and ghostly vision",5
-G05,Excessive tears,3
-G06,Swelling in the eye area,1
-G07,Night blindness,5
-G08,Headache,3
-G09,Sensitive to light,3
-G10,Spots or lines appear on the eyes,5
-G11,Convulsions,5
-G12,Daydream,1
-G13,Eyelids cannot be closed,1
-G14,Double vision,3
-G15,Vomit,1
-G16,Fever,1
-G17,Sensitive to touch,1
-G18,Great drowsiness,3
-G19,Feeling unwell,1
-G20,Weakening of the eye muscles,5
+G01,Mata merah,3
+G02,Mata kering,3
+G03,Mata berair,1
+G04,"Penglihatan buram, kabur, dan berbayang",5
+G05,Air mata berlebihan,3
+G06,Bengkak di area mata,1
+G07,Kebutaan malam,5
+G08,Sakit kepala,3
+G09,Peka terhadap cahaya,3
+G10,Bercak atau garis muncul pada mata,5
+G11,Kejang,5
+G12,Melayang-layang (berkhayal),1
+G13,Kelopak mata tidak bisa menutup,1
+G14,Penglihatan ganda,3
+G15,Muntah,1
+G16,Demam,1
+G17,Peka terhadap sentuhan,1
+G18,Rasa kantuk berlebihan,3
+G19,Merasa tidak sehat,1
+G20,Kelemahan otot mata,5
