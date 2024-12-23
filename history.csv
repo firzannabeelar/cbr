@@ -1,0 +1,101 @@
+Symptoms,Diagnosis
+"G05,G06,G07",Glaukoma
+"G06,G07,G08",Glaukoma
+"G10,G11,G16",Gangguan Retina
+"G10,G16,G20",Gangguan Retina
+"G06,G10,G16",Gangguan Retina
+"G01,G02,G06,G10",Katarak
+"G01,G02,G14",Katarak
+"G01,G15,G16",Konjungtivitis
+"G11,G15,G16",Gangguan Retina
+"G02,G05,G17",Kelainan Refraksi
+"G01,G03,G17",Konjungtivitis
+"G04,G05,G17",Kelainan Refraksi
+"G05,G14,G17,G19",Kelainan Refraksi
+"G06,G19,G20",Gangguan Retina
+"G07,G19,G20",Gangguan Retina
+"G07,G16,G18",Ambliopia
+"G03,G16,G18",Ambliopia
+"G04,G16,G18",Kelainan Refraksi
+"G14,G16,G18",Ambliopia
+"G09,G11,G18",Ambliopia
+"G09,G11,G16",Glaukoma
+"G01,G02,G03,G04",Katarak
+"G07,G08,G09,G10",Glaukoma
+"G01,G03,G06,G13",Konjungtivitis
+"G04,G05,G14",Kelainan Refraksi
+"G10,G15,G20",Gangguan Retina
+"G01,G02,G03,G04",Katarak
+"G07,G08,G09,G10",Glaukoma
+"G01,G03,G06,G13",Konjungtivitis
+"G04,G05,G14",Kelainan Refraksi
+"G10,G15,G20",Gangguan Retina
+"G01,G02,G03,G04",Katarak
+"G07,G08,G09,G10",Glaukoma
+"G01,G03,G06,G13",Konjungtivitis
+"G04,G05,G14",Kelainan Refraksi
+"G10,G15,G20",Gangguan Retina
+"G01,G02,G03,G04",Katarak
+"G07,G08,G09,G10",Glaukoma
+"G01,G03,G06,G13",Konjungtivitis
+"G04,G05,G14",Kelainan Refraksi
+"G10,G15,G20",Gangguan Retina
+"G01,G02,G03,G04",Katarak
+"G07,G08,G09,G10",Glaukoma
+"G01,G03,G06,G13",Konjungtivitis
+"G04,G05,G14",Kelainan Refraksi
+"G10,G15,G20",Gangguan Retina
+"G07,G10,G13",Glaukoma
+"G11,G13,G15",Konjungtivitis
+"G18,G19,G20",Gangguan Retina
+"G01,G03,G06",Konjungtivitis
+"G01,G05,G10",Gangguan Retina
+"G02,G15,G17",Katarak
+"G01,G02,G03,G04",Katarak
+"G01,G02,G03,G04",Katarak
+"G01,G03,G07",Konjungtivitis
+"G03,G06,G10",Gangguan Retina
+"G03,G06,G12",Konjungtivitis
+"G06,G12,G17",Ambliopia
+"G12,G17,G20",Gangguan Retina
+"G01,G02,G03,G06",Konjungtivitis
+"G01,G02,G03",Katarak
+"G01,G02,G03,G04",Katarak
+"G06,G07,G08,G09",Glaukoma
+"G02,G04,G05",Kelainan Refraksi
+"G01,G02,G03,G04",Katarak
+"G01,G02,G03,G04",Katarak
+"G01,G02,G03,G04",Katarak
+"G01,G02,G03,G04",Katarak
+"G01,G02,G03,G04",Katarak
+"G01,G02,G03,G04",Katarak
+"G10,G11,G13",Gangguan Retina
+"G01,G02,G03,G11",Katarak
+"G07,G08,G11",Glaukoma
+"G17,G19,G20",Gangguan Retina
+"G17,G18,G20",Ambliopia
+"G14,G15,G20",Gangguan Retina
+"G07,G08,G09,G12",Glaukoma
+"G07,G08,G09,G11",Glaukoma
+"G07,G08,G09,G10",Glaukoma
+"G07,G08,G09,G10",Glaukoma
+"G04,G05,G07,G08",Kelainan Refraksi
+"G01,G03,G06,G13",Konjungtivitis
+"G01,G03,G06,G12",Konjungtivitis
+"G01,G03,G06,G15",Konjungtivitis
+"G01,G03,G06",Konjungtivitis
+"G01,G03,G06,G08",Konjungtivitis
+"G10,G15,G16",Gangguan Retina
+"G10,G15,G16,G20",Gangguan Retina
+"G10,G16,G20",Gangguan Retina
+"G10,G16,G20",Gangguan Retina
+"G12,G17,G18",Ambliopia
+"G12,G16,G17,G18",Ambliopia
+"G12,G17,G18,G19",Ambliopia
+"G01,G02,G03,G07",Katarak
+"G01,G02,G03,G04",Katarak
+"G02,G03,G04,G05",Katarak
+"G01,G02,G04,G08",Katarak
+"G01,G02,G04,G09",Katarak
+"G01,G02,G03,G04",Katarak
+"G01,G04,G08,G09",Katarak
